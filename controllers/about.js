@@ -50,7 +50,7 @@ const update=(req,res)=>{
 }
 const remove=async(req,res)=>{
    try{
-    await about.deleteOne({_id:req.body.id});
+    await about.deleteOne({_id:req.params.id});
     res.status(200).json({message:"Your about deleted successfully!"});
    }
    catch(error){

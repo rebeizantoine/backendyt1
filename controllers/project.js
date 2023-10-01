@@ -52,11 +52,11 @@ const update=(req,res)=>{
         pic4:req.body.pic4,
         mobile_pic:req.body.mobile_pic
     } })
-    .then(updatedAbout => {
-        if (!updatedAbout) {
+    .then(data => {
+        if (!data) {
             return res.status(404).json({ message: "The project is not found" });
         }
-        res.status(200).json({ message: "A project  updated successfully", data: updatedAbout });
+        res.status(200).json({ message: "A project  updated successfully", data });
     })
     .catch(error => {
         res.status(500).json({
