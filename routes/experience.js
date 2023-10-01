@@ -1,8 +1,8 @@
 const express=require('express');
 const router=express.Router();
 const experienceControllers=require('../controllers/experience');
-router.post('/',experienceControllers.show);
+router.get('/',experienceControllers.show);
 router.post('/add',experienceControllers.add);
-router.post('/update/:id',experienceControllers.update);
-router.post('/remove/:id',experienceControllers.remove);
+router.put('/update/:id',experienceControllers.update);
+router.delete('/remove/:id',experienceControllers.remove);
 module.exports=router;
