@@ -27,7 +27,7 @@ const Project=new schema({
     },
     mobile_pic:{
         type:String
-    },
+    }
 });
 const p=mongoose.model('projects',Project);
 module.exports=p;
