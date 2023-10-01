@@ -31,8 +31,7 @@ const  update= async(req,res)=>{
 }
 const remove= async(req,res)=>{
     try{
-        let id=req.params.id;
-        await Ex.deleteOne({_id:id});
+        await Ex.deleteOne({_id:req.params.id});
         res.status(200).json({message:"A row from your experience collection removed successfully!"});
     }catch(error){
         res.status(500).json({message:"An error occured",error:error});
