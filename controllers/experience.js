@@ -3,6 +3,7 @@ const  add= async(req,res)=>{
     try{
         const ex=new Ex({
             date:req.body.date,
+            company:req.body.company,
             ex_txt:req.body.ex_txt
         });
         await ex.save();
@@ -23,7 +24,7 @@ const show = async(req, res) => {
 const  update= async(req,res)=>{
     try{
         let id=req.params.id;
-        await Ex.updateOne({_id:id},{$set: {date:req.body.date,ex_txt:req.body.ex_txt}});
+        await Ex.updateOne({_id:id},{$set: {date:req.body.date,company:req.body.company,ex_txt:req.body.ex_txt}});
         res.status(200).json({message:"An experience updated successfully"});
     }catch(error){
         res.status(500).json({message:"An error occured",error:error});

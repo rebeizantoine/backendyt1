@@ -3,7 +3,7 @@ const  add= async(req,res)=>{
     try{
         const Skill=new skill({
           name:req.body.name,
-          image:req.body.name
+          image:req.body.image
         });
         await Skill.save();
         res.status(200).json({message:"A skill added successfully"});
@@ -15,7 +15,7 @@ const show = async(req, res) => {
     try{
   const skills= await skill.find({});
         res.status(200).json({ message: "Your skills collection.", data: skills })
-     }
+     }  
      catch (error){
         res.status(500).json({ message: "An error occurred", error: error });
     }
