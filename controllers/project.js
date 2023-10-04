@@ -3,6 +3,7 @@ const add=(req,res)=>{
     const Project = new projects({
         title:req.body.title,
         subtitle:req.body.subtitle,
+        description:req.body.description,
         video_link:req.body.video_link,
         deployed_link:req.body.deployed_link,
         mainPicture:req.body.mainPicture,

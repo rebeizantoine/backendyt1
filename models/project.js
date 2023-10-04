@@ -7,6 +7,9 @@ const Project=new schema({
     subtitle:{
         type:String
     },
+    description:{
+       type: String
+    },
     video_link:{
         type:String
     },
