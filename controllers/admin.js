@@ -34,7 +34,7 @@ const add = async (req, res) => {
       if(!trying)res.status(404).json({message:"An error occured"});
       const resultat= await bcrypt.compare(password,trying.password);
       if(!resultat)res.status(401).json({message:"Wrong password"});
-      let token=jwt.sign({username:trying.username},'verySecretValue',{expiresIn:'1h'});
+      let token=jwt.sign({username:trying.username},'blabla',{expiresIn:'1h'});
       res.json({
         message:"Login successfully",
         token
@@ -43,14 +43,12 @@ const add = async (req, res) => {
       console.log(error);
     }
   }
-module.exports={add,login};
-/*
+  /*
 const login = async (req, res) => {
   try {
     let username = req.body.username;
     let password = req.body.password;
     
-    // Use findOne to find a user based on username, email, or phone
     const trying = await admin.findOne({ $or: [{ username }, { email: username }, { phone: username }] });
     
     if (!trying) {
@@ -63,7 +61,6 @@ const login = async (req, res) => {
       return res.status(401).json({ message: "Wrong password" });
     }
     
-    // Create a JWT token with the user's information
     const token = jwt.sign({ username: trying.username }, 'verySecretValue', { expiresIn: '1h' });
     
     res.json({
@@ -77,5 +74,5 @@ const login = async (req, res) => {
       error: error.message
     });
   }
-};
-*/
+};*/
+module.exports={add,login};
