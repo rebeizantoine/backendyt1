@@ -1,20 +1,15 @@
-
 require('dotenv').config();
-
-const Mongo_url = process.env.MONGO_URL;
+const Mongo_url = process.env.Mongo_url; // The case matches what's in your .env file
 const mongoose = require("mongoose");
 
-async function connectToMongoDB() {
+async function Connectionf() {
     try {
-        await mongoose.connect(Mongo_url, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
-        console.log("Connected to the database successfully");
+        await mongoose.connect(Mongo_url);
+        console.log("Connecting to the database successfully");
     } catch (error) {
-        console.error("An error occurred while connecting to the database");
-        console.error(error);
+        console.log("An error occurred");
+        console.log(error);
     }
 }
 
-module.exports = { connectToMongoDB };
+module.exports = { Connectionf };
