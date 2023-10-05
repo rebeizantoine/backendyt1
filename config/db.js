@@ -1,5 +1,5 @@
 require('dotenv').config();
-const Mongo_url=process.env.Mongo_url;
+const Mongo_url=process.env.MONGO_URL;
 const mongoose=require("mongoose")
 async function  Connectionf(){
     try{
